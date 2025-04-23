@@ -90,7 +90,7 @@ export default function HomePage() {
                 <SkillBar name="Hóa học" level={30} description="Nghiên cứu hóa học ứng dụng" animated />
                 <SkillBar name="Developer" level={100} description="Lập trình và phát triển phần mềm" animated />
                 <SkillBar name="Blogger" level={10} description="Chia sẻ kiến thức và kinh nghiệm" animated />
-            </div>``
+            </div>
             {/* Education Section */}
             <div className="w-full max-w-3xl p-8 bg-[#1a1a2e]/90 rounded-xl shadow-2xl border border-[#00f0ff]/50 transform transition-all hover:scale-105">
                 <Education />
