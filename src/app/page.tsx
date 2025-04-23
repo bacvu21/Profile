@@ -1,103 +1,166 @@
-import Image from "next/image";
+import Header from './component/Header';
+import './globals.css';
+import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
+import SkillBar from './component/Skills';
+import Project from './component/Projects';
+import Education from './component/Education';
+import Typewritter from './Utils/Typewritter';
+import Certificates from './component/Certificates';
+import MusicPlayer from './component/MusicPlayer';
+export default function HomePage() {
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    return (
+        <main className="flex min-h-screen bg-cyberpunk flex-col items-center justify-center  bg-gradient-to-b from-[#0f0f1c] to-[#1a1a2e] text-[#00f0ff] p-8 space-y-12">
+            {/* Header Section */}
+            <div className="w-full max-w-5xl retro-border p-4">
+                <Header />
+            </div>
+
+            {/* Music Player */}
+            <div className="w-full max-w-5xl text-center text-[#00f0ff] mb-8 retro-border p-4">
+                <MusicPlayer />
+            </div>
+
+            {/* Main Content */}
+            <div className="text-center max-w-3xl space-y-8 p-8 bg-[#1a1a2e]/90 rounded-xl shadow-2xl border border-[#00f0ff]/50 transform transition-all hover:scale-105">
+                {/* Title Section */}
+                <h1 className="text-6xl font-extrabold neon-text mb-6">
+                    <span className="text-[#ff00ff]">
+                        <Typewritter
+                            text="Xiin chào!"
+                            speed={1000}
+                            className="text-[#ff00ff]"
+                        /></span>
+                </h1>
+                <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#ff00ff] via-[#00f0ff] to-[#00ff00] text-transparent bg-clip-text mb-4 animate-pulse sparkle-text">
+                    Tôi là Bắc Vũ, 24 tuổi, thích nghiên cứu công nghệ và khoa học tự nhiên.
+                </h2>
+                <h3 className="text-xl font-medium animate-fadeIn">
+                    IoT & Automation Engineering
+                </h3>
+                <p className="text-lg text-[#00f0ff] mt-4 leading-relaxed">
+                    Chào mừng bạn đến với trang cá nhân của tôi! Tôi là một kỹ sư đam mê công nghệ và tự động hóa. Với hơn 2 năm kinh nghiệm,
+                    tôi đã tham gia nhiều dự án thú vị, từ thiết kế hệ thống IoT đến tự động hóa quy trình, mang lại giá trị thực tiễn và sáng tạo.
+                </p>
+                <p className="text-lg text-[#00f0ff] mt-4 leading-relaxed">
+                    <Typewritter
+                        text="N ếu bạn muốn thảo luận về công nghệ, hợp tác dự án, hoặc chỉ đơn giản là trò chuyện, hãy liên hệ với tôi qua các kênh bên dưới. Tôi luôn sẵn sàng kết nối!"
+                        speed={50}
+                        className="text-[#00f0ff]"
+                    />
+
+                </p>
+
+                {/* Social Media Icons */}
+                <div className="flex justify-center space-x-6 mt-6">
+                    <a
+                        href="https://facebook.com/yourprofile"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#00f0ff] hover:text-[#ff00ff] transform hover:scale-125 transition-all duration-300"
+                        aria-label="Facebook"
+                    >
+                        <FaFacebook size={32} />
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/yourprofile"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#00f0ff] hover:text-[#ff00ff] transform hover:scale-125 transition-all duration-300"
+                        aria-label="LinkedIn"
+                    >
+                        <FaLinkedin size={32} />
+                    </a>
+                    <a
+                        href="https://github.com/yourprofile"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#00f0ff] hover:text-[#ff00ff] transform hover:scale-125 transition-all duration-300"
+                        aria-label="GitHub"
+                    >
+                        <FaGithub size={32} />
+                    </a>
+                </div>
+            </div>
+            {/* Skills Section */}
+            <div className="w-full max-w-3xl p-8 bg-[#1a1a2e]/90 rounded-xl shadow-2xl border border-[#00f0ff]/50 transform transition-all hover:scale-105">
+                <SkillBar name="Vật lý" level={70} description="Đam mê nghiên cứu trong lĩnh vực vật lý" animated />
+                <SkillBar name="Toán" level={50} description="Chuyên sâu về đại số và giải tích" animated />
+                <SkillBar name="Hóa học" level={30} description="Nghiên cứu hóa học ứng dụng" animated />
+                <SkillBar name="Developer" level={100} description="Lập trình và phát triển phần mềm" animated />
+                <SkillBar name="Blogger" level={10} description="Chia sẻ kiến thức và kinh nghiệm" animated />
+            </div>``
+            {/* Education Section */}
+            <div className="w-full max-w-3xl p-8 bg-[#1a1a2e]/90 rounded-xl shadow-2xl border border-[#00f0ff]/50 transform transition-all hover:scale-105">
+                <Education />
+            </div>
+
+            { /*certification Section */}
+            <div className="w-full max-w-3xl p-8 bg-[#1a1a2e]/90 rounded-xl shadow-2xl border border-[#00f0ff]/50 transform transition-all hover:scale-105">
+                <Certificates />
+            </div>
+            {/* Projects Section */}
+            <div className="w-full max-w-3xl p-8 bg-[#1a1a2e]/90 rounded-xl shadow-2xl border border-[#00f0ff]/50 transform transition-all hover:scale-105">
+                <Project />
+            </div>
+
+            {/* Experience Section */}
+            <div className="w-full max-w-3xl p-8 bg-[#1a1a2e]/90 rounded-xl shadow-2xl border border-[#00f0ff]/50 transform transition-all hover:scale-105">
+                <h2 className="text-3xl font-semibold mb-4 text-[#ff00ff]">Kinh nghiệm làm việc</h2>
+
+                <p className="text-lg text-[#00f0ff] mb-4">
+                    Tôi đã làm việc trong nhiều dự án thú vị và có cơ hội học hỏi từ những người có nhiều năm kinh nghiệm.
+
+                </p>
+                <p className='text-lg text-[#00f0ff] mb-4'>
+                    Dưới đây là một số kinh nghiệm nổi bật của tôi:
+                </p>
+
+
+                <ul className="list-disc list-inside space-y-4 text-lg text-[#00f0ff]">
+                    <li>
+                        <strong>2024 - 2025 (1 năm):</strong> Kỹ sư IoT tại Công ty TNHH Hamaden Việt Nam, tham gia vào các dự án tự động hóa và IoT.
+                    </li>
+                    <li>
+                        <strong>2023 - 2024 (6 tháng):</strong>  Fresher tại FPT software, tham gia vào các dự án phát triển phần mềm và IoT.
+                    </li>
+                    <li>
+                        <strong>2022 - 2023: </strong>  Tham gia nghiên cứu khoa học tại Đại học Sư phạm Kỹ thuật Hưng Yên
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+            {/* Contact Section */}
+            <div className="w-full max-w-3xl p-8 bg-[#1a1a2e]/90 rounded-xl shadow-2xl border border-[#00f0ff]/50 transform transition-all hover:scale-105">
+                <h2 className="text-3xl font-semibold mb-4">Liên với tôi</h2>
+                <p className="text-lg text-[#00f0ff] mb-4">
+                    Email:
+                    <a
+                        href="mailto:your-email@example.com"
+                        className="text-[#ff00ff] hover:underline ml-2"
+                    >
+                        bacvu225@gmail.com
+                    </a>
+                </p>
+                <p className="text-lg text-[#00f0ff] mb-4">
+                    Điện thoại:
+                    <span className="text-[#ff00ff] ml-2">+84 0333108687</span>
+                </p>
+                <p className="text-lg text-[#00f0ff]">
+                    Địa chỉ:
+                    <span className="text-[#ff00ff] ml-2">Hà Nội, Việt Nam</span>
+                </p>
+            </div>
+
+            {/* Footer Section */}
+            <footer className="w-full max-w-5xl text-center text-[#00f0ff] mt-12">
+                <p className="text-sm">© 2023 Bắc Vũ. All rights reserved.</p>
+                <p className="text-sm">Designed with ❤️ by Bắc Vũ</p>
+            </footer>
+        </main >
+    );
 }
